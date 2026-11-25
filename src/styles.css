@@ -1,0 +1,247 @@
+@import "tailwindcss" source(none);
+@source "../src";
+@import "tw-animate-css";
+
+@custom-variant dark (&:is(.dark *));
+
+/*
+ * AITAM AI Assistant design system.
+ * AITAM website palette: teal, coral, and gold on white.
+ * Never hardcode colors in components - always use these semantic tokens.
+ */
+
+@theme inline {
+  --radius-sm: calc(var(--radius) - 4px);
+  --radius-md: calc(var(--radius) - 2px);
+  --radius-lg: var(--radius);
+  --radius-xl: calc(var(--radius) + 4px);
+  --radius-2xl: calc(var(--radius) + 8px);
+  --radius-3xl: calc(var(--radius) + 12px);
+  --radius-4xl: calc(var(--radius) + 16px);
+  --font-display: "Sora", ui-sans-serif, system-ui, sans-serif;
+  --font-sans: "Inter Tight", ui-sans-serif, system-ui, sans-serif;
+  --color-background: var(--background);
+  --color-foreground: var(--foreground);
+  --color-surface: var(--surface);
+  --color-surface-foreground: var(--surface-foreground);
+  --color-card: var(--card);
+  --color-card-foreground: var(--card-foreground);
+  --color-popover: var(--popover);
+  --color-popover-foreground: var(--popover-foreground);
+  --color-primary: var(--primary);
+  --color-primary-foreground: var(--primary-foreground);
+  --color-primary-soft: var(--primary-soft);
+  --color-secondary: var(--secondary);
+  --color-secondary-foreground: var(--secondary-foreground);
+  --color-muted: var(--muted);
+  --color-muted-foreground: var(--muted-foreground);
+  --color-accent: var(--accent);
+  --color-accent-foreground: var(--accent-foreground);
+  --color-destructive: var(--destructive);
+  --color-destructive-foreground: var(--destructive-foreground);
+  --color-border: var(--border);
+  --color-input: var(--input);
+  --color-ring: var(--ring);
+  --color-ring-offset-background: var(--background);
+  --color-chart-1: var(--chart-1);
+  --color-chart-2: var(--chart-2);
+  --color-chart-3: var(--chart-3);
+  --color-chart-4: var(--chart-4);
+  --color-chart-5: var(--chart-5);
+  --color-sidebar: var(--sidebar);
+  --color-sidebar-foreground: var(--sidebar-foreground);
+  --color-sidebar-primary: var(--sidebar-primary);
+  --color-sidebar-primary-foreground: var(--sidebar-primary-foreground);
+  --color-sidebar-accent: var(--sidebar-accent);
+  --color-sidebar-accent-foreground: var(--sidebar-accent-foreground);
+  --color-sidebar-border: var(--sidebar-border);
+  --color-sidebar-ring: var(--sidebar-ring);
+}
+
+:root {
+  --radius: 0.9rem;
+
+  --background: #ffffff;
+  --foreground: #181818;
+  --surface: #f7faf9;
+  --surface-foreground: #181818;
+
+  --card: #ffffff;
+  --card-foreground: #181818;
+  --popover: #ffffff;
+  --popover-foreground: #181818;
+
+  --primary: #1ab69d;
+  --primary-foreground: #111212;
+  --primary-soft: #e8f7f4;
+
+  --secondary: #ee4a62;
+  --secondary-foreground: #111212;
+
+  --muted: #f2f4f3;
+  --muted-foreground: #626967;
+
+  --accent: #f8b81f;
+  --accent-foreground: #181818;
+
+  --destructive: #c6283e;
+  --destructive-foreground: #ffffff;
+
+  --border: #e5e5e5;
+  --input: #e5e5e5;
+  --ring: #1ab69d;
+
+  --chart-1: #1ab69d;
+  --chart-2: #ee4a62;
+  --chart-3: #31b978;
+  --chart-4: #f8b81f;
+  --chart-5: #8e56ff;
+
+  --sidebar: #f7faf9;
+  --sidebar-foreground: #181818;
+  --sidebar-primary: #1ab69d;
+  --sidebar-primary-foreground: #111212;
+  --sidebar-accent: #e8f7f4;
+  --sidebar-accent-foreground: #181818;
+  --sidebar-border: #e5e5e5;
+  --sidebar-ring: #1ab69d;
+
+  --gradient-brand: linear-gradient(
+    135deg,
+    #31b978 0%,
+    #1ab69d 100%
+  );
+  --gradient-hero: radial-gradient(
+      1100px 520px at 50% -12%,
+      color-mix(in srgb, #1ab69d 12%, transparent) 0%,
+      transparent 70%
+    ),
+    linear-gradient(180deg, transparent 0%, var(--surface) 100%);
+  --shadow-soft: 0 1px 2px rgb(24 24 24 / 4%), 0 8px 24px -12px rgb(24 24 24 / 14%);
+  --shadow-elevated: 0 2px 4px rgb(24 24 24 / 5%), 0 20px 48px -20px rgb(24 24 24 / 24%);
+  --transition-base: 200ms cubic-bezier(0.4, 0, 0.2, 1);
+}
+
+.dark {
+  --background: #151a19;
+  --foreground: #f4f7f6;
+  --surface: #1b2220;
+  --surface-foreground: #f4f7f6;
+
+  --card: #202725;
+  --card-foreground: #f4f7f6;
+  --popover: #202725;
+  --popover-foreground: #f4f7f6;
+
+  --primary: #1ab69d;
+  --primary-foreground: #111212;
+  --primary-soft: #173b34;
+
+  --secondary: #ee4a62;
+  --secondary-foreground: #111212;
+
+  --muted: #252d2a;
+  --muted-foreground: #b3bdb9;
+
+  --accent: #f8b81f;
+  --accent-foreground: #181818;
+
+  --destructive: #ef6679;
+  --destructive-foreground: #181818;
+
+  --border: #39423f;
+  --input: #46514d;
+  --ring: #31b978;
+
+  --sidebar: #191f1d;
+  --sidebar-foreground: #f4f7f6;
+  --sidebar-primary: #1ab69d;
+  --sidebar-primary-foreground: #111212;
+  --sidebar-accent: #26332f;
+  --sidebar-accent-foreground: #f4f7f6;
+  --sidebar-border: #39423f;
+  --sidebar-ring: #31b978;
+
+  --gradient-brand: linear-gradient(
+    135deg,
+    #31b978 0%,
+    #1ab69d 100%
+  );
+  --gradient-hero: radial-gradient(
+      1100px 520px at 50% -12%,
+      color-mix(in srgb, #1ab69d 14%, transparent) 0%,
+      transparent 70%
+    ),
+    linear-gradient(180deg, transparent 0%, var(--surface) 100%);
+  --shadow-soft: 0 1px 2px rgb(0 0 0 / 30%), 0 8px 24px -12px rgb(0 0 0 / 50%);
+  --shadow-elevated: 0 2px 4px rgb(0 0 0 / 35%), 0 20px 48px -20px rgb(0 0 0 / 60%);
+}
+
+@layer base {
+  * {
+    border-color: var(--color-border);
+  }
+
+  html {
+    -webkit-font-smoothing: antialiased;
+  }
+
+  body {
+    background-color: var(--color-background);
+    color: var(--color-foreground);
+    font-family: var(--font-sans);
+  }
+
+  h1,
+  h2,
+  h3,
+  h4 {
+    font-family: var(--font-display);
+    letter-spacing: -0.02em;
+  }
+}
+
+/* Brand surfaces */
+@utility bg-brand {
+  background-image: var(--gradient-brand);
+}
+
+@utility bg-hero {
+  background-image: var(--gradient-hero);
+}
+
+@utility text-brand {
+  background-image: var(--gradient-brand);
+  background-clip: text;
+  color: transparent;
+}
+
+@utility shadow-soft {
+  box-shadow: var(--shadow-soft);
+}
+
+@utility shadow-elevated {
+  box-shadow: var(--shadow-elevated);
+}
+
+@utility transition-base {
+  transition: all var(--transition-base);
+}
+
+/* Three-dot typing indicator used while the assistant is thinking */
+@utility typing-dot {
+  animation: typing-bounce 1.2s infinite ease-in-out;
+}
+
+@keyframes typing-bounce {
+  0%,
+  60%,
+  100% {
+    transform: translateY(0);
+    opacity: 0.45;
+  }
+  30% {
+    transform: translateY(-4px);
+    opacity: 1;
+  }
+}
